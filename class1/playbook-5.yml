@@ -1,0 +1,19 @@
+---
+ - name: debug variables
+   hosts: cisco
+   vars:
+      ntp_server1: 20.20.20.20
+      ntp_server2: 20.20.20.30
+   tasks:
+    - debug:
+        msg: "{{ local_as }}"
+    - debug:
+        msg: "{{ remote_as_number }}"
+    - debug:
+        msg: "{{ inventory_hostname }}"
+    - debug:
+        msg: "{{ ansible_host }}"
+    - debug:
+        msg: "{{ ntp_server1 }}"
+    - debug:
+        msg: "{{ ntp_server2 }}"

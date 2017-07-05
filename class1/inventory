@@ -1,0 +1,25 @@
+# 3a. Create a simple inventory file my-inventory.
+# It should have only an entry for the local group and localhost.
+#
+# 4a. Expand your inventory file to include a 'cisco' group
+# and two Cisco routers ('pynet-rtr1' and 'pynet-rtr2').
+# These devices should have the ip addresses of '184.105.247.70'
+# and '184.105.247.71' respectively.
+# Use the ansible_host variable for the IP addresses.
+# Make sure you that you also specify the following two variables
+# (for both of the routers):
+#
+# replace 'kbyers' with the name of your home directory
+# ansible_connection=local
+# ansible_python_interpreter=/home/kbyers/VENV/ansible/bin/python
+
+[local]
+localhost ansible_connection=local
+
+[cisco]
+pynet-rtr1 ansible_host=184.105.247.70
+pynet-rtr2 ansible_host=184.105.247.71
+
+[cisco:vars]
+ansible_connection=local
+ansible_python_interpreter=/home/veiriksson/VENV/ansible/bin/python
